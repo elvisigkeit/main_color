@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maincolor/bloc/pokemon_color_bloc.dart';
@@ -32,10 +34,17 @@ class MyHomePage extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: themeColor,
           textTheme: GoogleFonts.pressStart2PTextTheme(
-            Theme.of(context).textTheme,
+            TextTheme(subtitle2: TextStyle(
+                color: isDark(themeColor) ? Colors.white : Colors.black
+            ))
           ),
         ),
         home: PokemonListScreen(themeColor)
       );
+  }
+
+  bool isDark(MaterialColor colors) {
+    return ThemeData.estimateBrightnessForColor(Color(colors.value))
+      == Brightness.dark;
   }
 }
