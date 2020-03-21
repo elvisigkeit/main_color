@@ -6,8 +6,7 @@ import '../network_manager.dart';
 
 class PokemonScreen extends StatelessWidget {
   final Pokemon pokemon;
-  final MaterialColor themeColor;
-  PokemonScreen(this.pokemon, this.themeColor);
+  PokemonScreen(this.pokemon);
 
   @override
   Widget build(BuildContext context) {

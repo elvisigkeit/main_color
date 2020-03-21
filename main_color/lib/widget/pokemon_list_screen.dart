@@ -48,7 +48,7 @@ class PokemonListScreen extends StatelessWidget{
       body: StreamBuilder<List<Pokemon>>(
         stream: MyApp.listBloc.listStream.stream,
         builder: (context, snapshot) {
-          return PokemonList(snapshot.data, themeColor);
+          return PokemonList(snapshot.data);
         }
       ),
     );
