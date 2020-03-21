@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maincolor/main.dart';
-import 'package:maincolor/widget/pokemon_list_screen.dart';
+import 'package:maincolor/model/pokemon.dart';
 import 'package:maincolor/widget/pokemon_screen.dart';
 
-import '../network_manager.dart';
 
 class PokemonList extends StatelessWidget{
   final List<Pokemon> list;

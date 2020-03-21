@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:maincolor/model/pokemon.dart';
 import 'package:maincolor/widget/pokemon_image.dart';
 
 import '../main.dart';
-import '../network_manager.dart';
 
 class PokemonScreen extends StatelessWidget {
   final Pokemon pokemon;

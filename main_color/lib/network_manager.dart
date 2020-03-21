@@ -1,12 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
-class Pokemon {
-  String name;
-  String url;
-  String number;
-  Pokemon(this.name, this.url, this.number);
-}
+import 'model/pokemon.dart';
 
 class NetworkManager {
   static Future<List<Pokemon>> requireListPokemons(int index) async {

@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maincolor/bloc/pokemon_color_bloc.dart';
 import 'package:maincolor/widget/pokemon_list_screen.dart';
+import 'bloc/pokemon_list_bloc.dart';
 
 void main() {
   runApp(MyApp());
