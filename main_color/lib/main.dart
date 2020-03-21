@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maincolor/bloc/pokemon_color_bloc.dart';
-import 'package:maincolor/widget/pokemon_screen.dart';
+import 'package:maincolor/widget/pokemon_list_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,14 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: colorBloc.colorStream.stream,
-      builder: (ctx, snapshot) =>  MyHomePage(themeColor: snapshot.data)
+      builder: (ctx, snapshot) =>  MyHomePage(snapshot.data)
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final MaterialColor themeColor;
-  MyHomePage({this.themeColor = Colors.green});
+  MyHomePage(this.themeColor);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,8 @@ class MyHomePage extends StatelessWidget {
             Theme.of(context).textTheme,
           ),
         ),
-        home: PokemonScreen(themeColor),
+        //home: PokemonScreen(themeColor),
+        home: PokemonListScreen()
       );
   }
 }

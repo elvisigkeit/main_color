@@ -22,6 +22,7 @@ class PokemonColorBloc {
       indexOfColors = index;
       addColorInBout();
     });
+    colorStream.add(materialFromColor(Colors.red));
   }
 
   void addColorInBout() {
