@@ -21,7 +21,9 @@ class ListBloc {
       }
     });
     requestStream.stream.listen((event) async {
-      list.insertAll(0, await NetworkManager.requireListPokemons(listIndex));
+      List<Pokemon> listReceived = await NetworkManager.requireListPokemons(listIndex);
+      listReceived.insertAll(0, list);
+      list = listReceived;
       listStream.add(list);
       listIndex++;
     });

@@ -4,7 +4,7 @@ import 'package:maincolor/widget/pokemon_list_screen.dart';
 import '../network_manager.dart';
 
 class PokemonList extends StatelessWidget{
-  List<Pokemon> list;
+  final List<Pokemon> list;
   PokemonList(this.list);
 
   @override
