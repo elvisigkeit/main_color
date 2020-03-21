@@ -8,6 +8,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static ListBloc listBloc = ListBloc();
   static PokemonColorBloc colorBloc = PokemonColorBloc();
   MyApp();
   @override
@@ -34,8 +35,7 @@ class MyHomePage extends StatelessWidget {
             Theme.of(context).textTheme,
           ),
         ),
-        //home: PokemonScreen(themeColor),
-        home: PokemonListScreen()
+        home: PokemonListScreen(themeColor)
       );
   }
 }

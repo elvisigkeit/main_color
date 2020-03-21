@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:maincolor/main.dart';
 import 'package:maincolor/widget/pokemon_list.dart';
 
 import '../network_manager.dart';
@@ -33,7 +34,9 @@ class ListBloc {
 }
 
 class PokemonListScreen extends StatelessWidget{
-  static ListBloc listBloc = ListBloc();
+  final MaterialColor themeColor;
+
+  PokemonListScreen(this.themeColor);
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +46,9 @@ class PokemonListScreen extends StatelessWidget{
         style: Theme.of(context).textTheme.subtitle2,
       ),),
       body: StreamBuilder<List<Pokemon>>(
-        stream: listBloc.listStream.stream,
+        stream: MyApp.listBloc.listStream.stream,
         builder: (context, snapshot) {
-          return PokemonList(snapshot.data);
+          return PokemonList(snapshot.data, themeColor);
         }
       ),
     );

@@ -9,11 +9,11 @@ class PokemonColorBloc {
   StreamController<int> indexStream = StreamController();
   int indexOfColors = 0;
   PaletteGenerator paletteGenerator;
+  ui.Image lastImage;
 
   PokemonColorBloc() {
     imageStream.stream.listen((widget) async {
       if(widget != null) {
-        int i = 0;
         paletteGenerator = await PaletteGenerator.fromImage(widget);
         addColorInBout();
       }

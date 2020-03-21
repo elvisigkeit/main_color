@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:maincolor/widget/pokemon_image.dart';
 
 import '../main.dart';
+import '../network_manager.dart';
 
 class PokemonScreen extends StatelessWidget {
+  final Pokemon pokemon;
   final MaterialColor themeColor;
-  PokemonScreen(this.themeColor);
+  PokemonScreen(this.pokemon, this.themeColor);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dragonite Colors",
+        title: Text("${pokemon.name} Colors",
           style: Theme.of(context).textTheme.subtitle2,
         ),
       ),
@@ -24,7 +26,7 @@ class PokemonScreen extends StatelessWidget {
               child: Container(
                 child: Transform.scale(
                   scale: 2.0,
-                  child: PokemonImage(),
+                  child: PokemonImage(pokemon.number),
                 ),
               ),
             ),
@@ -35,17 +37,17 @@ class PokemonScreen extends StatelessWidget {
               ButtonBar(children: <Widget>[
                 RaisedButton(
                   child: Text("Theme1"),
-                  color: themeColor == null ? Theme.of(context).primaryColor : themeColor.shade900,
+                  color: Theme.of(context).primaryColor,
                   onPressed: ()=>MyApp.colorBloc.indexStream.add(0),
                 ),
                 RaisedButton(
                   child: Text("Theme2"),
-                  color: themeColor == null ? Theme.of(context).primaryColor : themeColor.shade900,
+                  color: Theme.of(context).primaryColor,
                   onPressed: ()=>MyApp.colorBloc.indexStream.add(1),
                 ),
                 RaisedButton(
                   child: Text("Theme3"),
-                  color: themeColor == null ? Theme.of(context).primaryColor : themeColor.shade900,
+                  color: Theme.of(context).primaryColor,
                   onPressed: ()=>MyApp.colorBloc.indexStream.add(2),
                 ),
               ],),
