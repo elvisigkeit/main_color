@@ -31,25 +31,47 @@ class PokemonScreen extends StatelessWidget {
             ),
             Flexible(flex:1, child: Container(),),
             Flexible(flex:1, child:
-            Row(children: <Widget>[
-              Flexible(flex:1, child: Container(),),
-              ButtonBar(children: <Widget>[
-                RaisedButton(
-                  child: Text("Theme1"),
-                  color: Theme.of(context).primaryColor,
-                  onPressed: ()=>MyApp.colorBloc.indexStream.add(0),
-                ),
-                RaisedButton(
-                  child: Text("Theme2"),
-                  color: Theme.of(context).primaryColor,
-                  onPressed: ()=>MyApp.colorBloc.indexStream.add(1),
-                ),
-                RaisedButton(
-                  child: Text("Theme3"),
-                  color: Theme.of(context).primaryColor,
-                  onPressed: ()=>MyApp.colorBloc.indexStream.add(2),
-                ),
-              ],),
+              Row(children: <Widget>[
+                Flexible(flex:1, child: Container(),),
+                ButtonBar(children: <Widget>[
+                  RaisedButton(
+                    child: Text("Theme1"),
+                    color: Theme.of(context).primaryColor,
+                    onPressed: ()=>MyApp.colorBloc.indexStream.add(0),
+                  ),
+                  RaisedButton(
+                    child: Text("Theme2"),
+                    color: Theme.of(context).primaryColor,
+                    onPressed: ()=>MyApp.colorBloc.indexStream.add(1),
+                  ),
+                  RaisedButton(
+                    child: Text("Theme3"),
+                    color: Theme.of(context).primaryColor,
+                    onPressed: ()=>MyApp.colorBloc.indexStream.add(2),
+                  ),
+                ],),
+                Flexible(flex:1, child: Container(),),
+              ],)),
+            Flexible(flex:1, child:
+              Row(children: <Widget>[
+                Flexible(flex:1, child: Container(),),
+                ButtonBar(children: <Widget>[
+                  RaisedButton(
+                    child: Text("Theme4"),
+                    color: Theme.of(context).primaryColor,
+                    onPressed: ()=>MyApp.colorBloc.indexStream.add(3),
+                  ),
+                  RaisedButton(
+                    child: Text("Theme5"),
+                    color: Theme.of(context).primaryColor,
+                    onPressed: ()=>MyApp.colorBloc.indexStream.add(4),
+                  ),
+                  RaisedButton(
+                    child: Text("Theme6"),
+                    color: Theme.of(context).primaryColor,
+                    onPressed: ()=>MyApp.colorBloc.indexStream.add(5),
+                  ),
+                ],),
               Flexible(flex:1, child: Container(),),
             ],)),
             Flexible(flex:1, child: Container(),),
