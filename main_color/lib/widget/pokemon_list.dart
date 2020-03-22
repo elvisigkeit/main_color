@@ -12,14 +12,8 @@ class PokemonList extends StatelessWidget{
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => PokemonScreen(pokemon),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        var begin = Offset(1.0, 0.0);
-        var end = Offset.zero;
-        var curve = Curves.easeOutCubic;
-        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-        var offsetAnimation = animation.drive(tween);
-
-        return SlideTransition(
-          position: offsetAnimation,
+        return FadeTransition(
+          opacity: animation,
           child: child,
         );
       },
@@ -47,8 +41,18 @@ class PokemonList extends StatelessWidget{
                     Positioned(
                         top: screenSize.height*0.0001,
                         left: screenSize.width*0.23,
-                        child: Image.network("https://raw.githubusercontent.com/PokeAPI/"
-                            "sprites/master/sprites/pokemon/${list[idx].number}.png",)
+                        child: Hero(
+                          tag: list[idx].name,
+                          child: Image.network("https://raw.githubusercontent.com/PokeAPI/"
+                              "sprites/master/sprites/pokemon/${list[idx].number}.png",),
+                          flightShuttleBuilder: (flightContext, animation, flightDirection, fromHeroContext, toHeroContext) {
+                            var newAnimation = animation.drive(Tween<double>(begin: 1.0, end: 2.0));
+                            return ScaleTransition(
+                              scale: newAnimation,
+                              child: fromHeroContext.widget
+                            );
+                          },
+                        )
                     ),
                     Positioned(
                       top: screenSize.height*0.03,

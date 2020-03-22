@@ -25,7 +25,10 @@ class PokemonScreen extends StatelessWidget {
               child: Container(
                 child: Transform.scale(
                   scale: 2.0,
-                  child: PokemonImage(pokemon.number),
+                  child: Hero(
+                    tag: pokemon.name,
+                    child: PokemonImage(pokemon.number)
+                  ),
                 ),
               ),
             ),
