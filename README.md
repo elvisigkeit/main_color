@@ -3,6 +3,7 @@
 > An toy app that demonstrates development of animations, theming and etc in flutter
 
 > The main target is to change the main color of the theme based on colors of pokemon
+
 > The pokemon are retrieved from a database with a infinite list coded and their selection is made with hero animation
 
 ## ✨ Demo
